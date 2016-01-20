@@ -7,21 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a  class="navbar-brand" href='#'> tree book </a> 
-			<ul class="nav nav-tabs">
-  					<li><%= link_to "statuses" , statuses_path %></li>
-  					<li><%= link_to "sign out" , destroy_user_session_path, method: :delete %></li>
-  			</ul>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a  class="navbar-brand" href='#'> tree book </a> 
+				<ul class="nav nav-tabs">
+	  					<li><%= link_to "statuses" , statuses_path %></li>
+	  					<li><%= link_to "sign in" , new_user_session_path %></li>
+	  					<li><%= link_to "sign out" , destroy_user_session_path, method: :delete %></li>
+	  			</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="container">
+	<div class="container">
 	   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-<%= yield %>
-</div>
+	    <%= yield %>
+	</div>
 </body>
 </html>

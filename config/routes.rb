@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users , controllers: {
-    confirmations: "users/confirmations",
-    passwords: "users/passwords",
-    registrations: 'users/registrations',
-    sessions: "users/sessions",
-    unlocks: "users/unlocks"  }
+  get 'profiles/show'
+
+  devise_for :users 
   devise_scope :user do 
     get 'register', to: 'devise/registrations#new', as: :register
     get 'login', to: 'devise/sessions#new', as: :login
   end
   resources :statuses
   root to: "statuses#index"
-
+  get '/:id' , to: 'profiles#show'
   #root '/home' => "application#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

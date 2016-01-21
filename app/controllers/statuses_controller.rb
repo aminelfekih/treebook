@@ -1,6 +1,5 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
-
   # GET /statuses
   # GET /statuses.json
   def index

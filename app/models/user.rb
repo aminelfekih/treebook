@@ -6,16 +6,9 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  	validates :first_name, presence: true
-  	validates :last_name, presence: true
-	validates :profile_name, presence: true, uniqueness: true, 
-    format: {
-      with: /^[a-zA-Z0-9]+$/,
-      message: 'must be formatted correctly.'
-      # message must correspond to the one in user_test.rb
-    }
-
-
-	has_many :statuses
+validates :first_name, presence: true
+validates :last_name, presence: true
+validates :profile_name, presence: true, uniqueness: true, format: {with: /^[a-zA-Z0-9_-]+$/, message: "Must be formatted correctly.",  multiline: true}
+has_many :statuses
 
 end

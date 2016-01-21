@@ -7,17 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a  class="navbar-brand" href='#'> tree book </a> 
-				<ul class="nav nav-tabs">
-	  					<li><%= link_to "statuses" , statuses_path %></li>
-	  					<li><%= link_to "sign in" , new_user_session_path %></li>
-	  					<li><%= link_to "sign out" , destroy_user_session_path, method: :delete %></li>
-	  			</ul>
-			</div>
-		</div>
+	<div class=" navbar-inverse navbar-inner navbar-fixed-top">
+				<a class="navbar-brand" href='#'> tree book </a> 
+				<li class="nav navbar-brand"><%= link_to "All Statuses" , statuses_path %></li>
+				<% if user_signed_in? %>
+					<ul class="nav nav-tabs pull-right">
+							<li><%= link_to current_user.profile_name, edit_user_registration_path %></li>
+							<li><%= link_to "Log Out",destroy_user_session_path, method: :delete %></li>
+					</ul>
+				<% else %>	
+					<ul class="nav nav-tabs pull-right">
+						<li><%= link_to "Register", register_path %></li>
+						<li><%= link_to "Log In", login_path %></li>
+					</ul>
+				<% end %>	
 	</div>
 	<div class="container">
 	   <p class="notice"><%= notice %></p>

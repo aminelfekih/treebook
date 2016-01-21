@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: "users/sessions",
     unlocks: "users/unlocks"  }
+  devise_scope :user do 
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+  end
   resources :statuses
   root to: "statuses#index"
 

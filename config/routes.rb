@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   end
   resources :statuses
   root to: "statuses#index"
+  get 'data_vis', to: 'data_vis#data'
   get '/:id' , to: 'profiles#show'
-
   #root '/home' => "application#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

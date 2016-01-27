@@ -1,0 +1,33 @@
+html, body{
+        height: 1500px;
+         background-color: #eee;
+     	 padding-top: 60px;
+    }
+    svg {
+      background-color: #cef ;
+      margin-left: 160px;
+    }
+text {font-size:36px,background-color : white , color: orange;}
+
+.bar {
+  fill: steelblue;
+  cursor: pointer;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}

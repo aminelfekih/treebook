@@ -10,6 +10,7 @@
 	<div class=" navbar-inverse navbar-inner navbar-fixed-top">
 				<a class="navbar-brand" href='#'> tree book </a> 
 				<li class="nav navbar-brand"><%= link_to "All Statuses" , statuses_path %></li>
+				<li class="nav navbar-brand"><%= link_to "data_vis" , data_vis_path %></li>
 				<% if user_signed_in? %>
 					<ul class="nav nav-tabs pull-right">
 							<li><%= link_to current_user.profile_name, edit_user_registration_path %></li>
